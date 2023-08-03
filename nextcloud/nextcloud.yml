@@ -3,10 +3,10 @@ kind: Deployment
 metadata:
   name: nextcloud
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app: nextcloud
+  replicas: 1
   template:
     metadata:
       labels:
@@ -14,49 +14,38 @@ spec:
     spec:
       containers:
       - name: nextcloud
-        image: nextcloud:latest
-        ports:
-        - containerPort: 443
-        env:
-        - name: MYSQL_ROOT_PASSWORD
-          value: "your_password"
-        - name: MYSQL_DATABASE
-          value: "nextcloud"
-        - name: MYSQL_USER
-          value: "nextcloud"
-        - name: MYSQL_PASSWORD
-          value: "nextcloud_password"
+        image: nextcloud
         volumeMounts:
         - name: nextcloud-data
           mountPath: /var/www/html
-        resources:
-          limits:
-            cpu: "1"
-            memory: "512Mi"
-      - name: mariadb
-        image: mariadb:latest
-        ports:
-        - containerPort: 3306
         env:
-        - name: MYSQL_ROOT_PASSWORD
-          value: "your_password"
+        - name: NEXTCLOUD_TRUSTED_DOMAINS
+          value: example.com
+        - name: MYSQL_HOST
+          value: nextcloud-mariadb
         - name: MYSQL_DATABASE
-          value: "nextcloud"
+          value: nextcloud
         - name: MYSQL_USER
-          value: "nextcloud"
+          value: nextcloud
         - name: MYSQL_PASSWORD
-          value: "nextcloud_password"
-        volumeMounts:
-        - name: mariadb-data
-          mountPath: /var/lib/mysql
-        resources:
-          limits:
-            cpu: "1"
-            memory: "512Mi"
+          value: example
       volumes:
       - name: nextcloud-data
         persistentVolumeClaim:
           claimName: nextcloud-data
-      - name: mariadb-data
-        persistentVolumeClaim:
-          claimName: mariadb-data
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nextcloud
+spec:
+  selector:
+    app: nextcloud
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
+  - name: https
+    port: 443
+    targetPort: 443
+  type: LoadBalancer

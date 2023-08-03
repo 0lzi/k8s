@@ -28,13 +28,9 @@ echo cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1 | sudo tee -a /bo
 
 curl -sfL https://get.k3s.io | 	INSTALL_K3S_EXEC="--docker --write-kubeconfig-mode 644" sh -
 
-# get token
-
-sudo cat /var/lib/rancher/k3s/server/token
-
 # export node token 
 
-export NODE_TOKEN=[token here]
+export NODE_TOKEN=$(sudo cat /var/lib/rancher/k3s/server/token)
 
 # node oneliner
 
