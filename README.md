@@ -1,6 +1,13 @@
 # k8s
-Kubernetes setup
+Kubernetes setup using k3s on raspberry pi 3b 
 
-# k3s
+# Deploymenmts
 
-# rancher
+- [ ] nextcloud
+- [ ] ghost blog
+- [ ] uptime kuma
+- [ ] pi-hole
+- [ ] grafana
+- [ ] influxdb
+- [ ] octopus.energy consumption metrics
+- [ ]
