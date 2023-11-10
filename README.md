@@ -1,7 +1,12 @@
 # k8s
-Kubernetes setup using k3s on raspberry pi 3b 
+Kubernetes setup using k3s 
 
-# Deploymenmts
+# Kustomize Deployments
+
+- [ ] [AWX](/awx)
+- [ ] [EDA](/eda)
+
+# Deploymenmts TODO
 
 - [ ] nextcloud
 - [ ] ghost blog
@@ -10,4 +15,4 @@ Kubernetes setup using k3s on raspberry pi 3b
 - [ ] grafana
 - [ ] influxdb
 - [ ] octopus.energy consumption metrics
-- [ ]
+
