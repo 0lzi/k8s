@@ -1,4 +1,4 @@
-# Event Driven Ansible - K3S ( NON PRODUCTION )
+# Event Driven Ansible - K3S ( Not got working - NON PRODUCTION )
 
 1. Install k3s on server
 2. Install `kubectl` & `Kustomize`
