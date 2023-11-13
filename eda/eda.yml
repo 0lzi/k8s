@@ -5,5 +5,3 @@ metadata:
   name: eda
 spec:
   automation_server_url: http://192.168.1.119:30080 # Host or FQDN of AWX
-  service_type: nodeport
-  nodeport_port: 8080
