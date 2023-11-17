@@ -1,5 +1,7 @@
 # Event Driven Ansible - K3S ( Not got working - NON PRODUCTION )
 
+_NOTES:_ https://github.com/kurokobo/awx-on-k3s/tree/main/rulebooks
+
 1. Install k3s on server
 2. Install `kubectl` & `Kustomize`
 3. `kustomize build . | kubectl apply -f -`
