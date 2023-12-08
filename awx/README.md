@@ -11,9 +11,10 @@ https://github.com/kurokobo/awx-on-k3s/tree/main
 3. `kustomize build . | kubectl apply -f -`
 4. Check logs `k logs -f deployments/awx-operator-controller-manager -c awx-manager -n awx`
 5. Get admin password `kubectl get secret awx-admin-password -o jsonpath="{.data.password}" --namespace awx | base64 --decode`
-6. Add awx pv and pvc `kubectl apply -f awx-pv.yml && kubectl apply -f awx-pvc.yml`
-7. Create new local user
-8. Set up Github OAuth
+6. Create `/data/projects` on host.
+7. Add awx pv and pvc `kubectl apply -f awx-pv.yml && kubectl apply -f awx-pvc.yml`
+8. Create new local user
+9. Set up Github OAuth
 ```
 GitHub OAuth2 Organization Map - 
 
