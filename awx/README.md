@@ -20,8 +20,8 @@ GitHub OAuth2 Organization Map -
 {
   "Default": {
     "admins": [
-      "0lzi",
-      "foolishhim@gmail.com"
+      "Username,
+      "user@email.com"
     ],
     "users": false
   }
