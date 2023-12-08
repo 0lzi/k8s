@@ -6,3 +6,6 @@
     spec:
       service_type: nodeport
       nodeport_port: 30080
+
+      projects_persistence: true
+      projects_existing_claim: awx-projects-claim

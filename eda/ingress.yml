@@ -7,16 +7,16 @@ metadata:
 spec:
   tls:
     - hosts:
-        - eda.local
+        - eda.lab
       secretName: eda-secret-tls
   rules:
-    - host: eda.local
+    - host: eda.lab
       http:
         paths:
           - path: /webhooks/demo
             pathType: ImplementationSpecific
             backend:
               service:
-                name: activation-job-1-10-5000
+                name: activation-job-1-1-5000
                 port:
                   number: 5000
